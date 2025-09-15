@@ -1,7 +1,7 @@
 [project]
-name = "benchmark-model"
+name = "bm"
 version = "0.1.0"
-description = "Add your description here"
+description = "Benchmark and Estimate Data Models"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
