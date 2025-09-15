@@ -7,4 +7,4 @@ from bm.synthetic_distribution import SyntheticDistribution
 # Don't import run here to avoid circular imports when run.py is executed directly
 __all__ = ["SyntheticDistribution", "estimate", "estimate_synthetic_mi"]
 
-__version__ = "0.1.0"
+__version__ = "0.1.0.3"
