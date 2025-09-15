@@ -14,14 +14,19 @@ def get_marginal_dist(
     """Get the marginal distribution of the dataset."""
     n_classes = len(np.unique(y))
     n_features = x.shape[1]
+    
     probs = SyntheticDistribution.compute_empirical_probs(y, n_classes)
+    logging.debug("Empirical probs")
     bounds = SyntheticDistribution.make_bounds(x, n_features, grid_size)
+    logging.debug("Make probs")
+    
     marginal_cond_probs = SyntheticDistribution.make_marginal_cond_probs(
         x,
         y,
         bounds,
         grid_size,
     )
+    logging.debug("Make marginal probs")
     logging.debug(
         f"Marginal cond probs shape: {marginal_cond_probs.shape} "
         f"mean: {marginal_cond_probs[0].mean()}, {marginal_cond_probs[1].mean()}",
