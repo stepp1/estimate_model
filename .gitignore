@@ -1,0 +1,22 @@
+# IDE
+.idea
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.pyc
+
+# Data
+data
+
+# Figures
+figures
+
+# Virtual environment
+mnist_env
+
+# Sandbox script
+sandbox.py
+
+# Root directory files
+/*.png
+/*.json
