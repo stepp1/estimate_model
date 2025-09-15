@@ -1158,8 +1158,13 @@ class SyntheticDistribution:
     ) -> npt.NDArray[np.object_]:
         """Make bounds."""
         bounds: npt.NDArray[np.object_] = np.empty(shape=(n_features,), dtype=object)
+        # Vectorized computation of min/max for all features
+        x_min = x.min(axis=0)
+        x_max = x.max(axis=0)
+
+        # Vectorized creation of bounds for all features
         for i in range(n_features):
-            bounds[i] = np.linspace(x[:, i].min(), x[:, i].max(), grid_size + 1)
+            bounds[i] = np.linspace(x_min[i], x_max[i], grid_size + 1)
         return bounds
 
     @staticmethod
